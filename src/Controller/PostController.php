@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\Exception\ValidationException;
 
 final class PostController{
@@ -76,18 +77,20 @@ final class PostController{
         /** @var Post[] $posts */
         $posts = $this->entityManager->getRepository(Post::class)->findAll();
 
-        $data = [];
+        // $data = [];
 
-        foreach($posts as $post){
-            $data[] = [
-                'id' => $post->getId(),
-                'title' => $post->title,
-                'description' => $post->description,
-                'createdAt' => $post->getCreatedAt()->format('Y-m-d'),
-            ];
-        }
+        // foreach($posts as $post){
+        //     $data[] = [
+        //         'id' => $post->getId(),
+        //         'title' => $post->title,
+        //         'description' => $post->description,
+        //         'createdAt' => $post->getCreatedAt()->format('Y-m-d'),
+        //     ];
+        // }
 
-        return JsonResponse::create($data);
+        // return JsonResponse::create($data);
+
+        return JsonResponse::fromJsonString($this->serializer->serialize($posts, 'json')); 
     }
 
     /**

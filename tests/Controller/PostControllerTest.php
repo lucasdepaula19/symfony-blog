@@ -67,7 +67,7 @@ class PostControllerTest extends WebTestCase{
     }
 
     public function test_update_post(): void {
-        $post = new Post("teste", "teste");
+        $post = new Post("titulo de teste", "descriçaõ de teste");
         $this->em->persist($post);
         $this->em->flush();
         
@@ -79,7 +79,7 @@ class PostControllerTest extends WebTestCase{
     }
     
     // public function test_list_all_post(): void {
-    //     $post = new Post("teste", "teste");
+    //     $post = new Post("titulo de teste", "descriçaõ de teste");
     //     $this->em->persist($post);
     //     $this->em->flush();
     
@@ -88,7 +88,7 @@ class PostControllerTest extends WebTestCase{
     // }
     
     // public function test_list_post(): void{
-    //     $post = new Post("teste", "teste");
+    //     $post = new Post("titulo de teste", "descriçaõ de teste");
     //     $this->em->persist($post);
     //     $this->em->flush();
     
