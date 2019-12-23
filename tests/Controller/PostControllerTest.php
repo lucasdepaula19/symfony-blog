@@ -60,7 +60,7 @@ class PostControllerTest extends WebTestCase{
 
     public function test_create_post_with_invalid_title(): void{
         $this->client->request('POST', '/posts',[],[],[], json_encode([
-            // 'title' => 1234,
+            'title' => null,
             'description' => null
         ]));
         $this->assertEquals(Response::HTTP_BAD_REQUEST, $this->client->getResponse()->getStatusCode());
