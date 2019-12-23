@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Mailer;
-
-class SimpleMailer
-{
-    public function send(string $to, string $message): void{
-        
+class SimpleMailer {
+    public function send(string $to, string $message): void {
+        //enviando email
     }
 }

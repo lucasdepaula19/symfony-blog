@@ -6,7 +6,7 @@
 use Symfony\Component\DependencyInjection\Dumper\Preloader;
 
 require dirname(__DIR__, 3).'\\vendor/autoload.php';
-require __DIR__.'/ContainerADkH9IL/App_KernelDevDebugContainer.php';
+require __DIR__.'/ContainerWWxix3T/App_KernelDevDebugContainer.php';
 
 $classes = [];
 $classes[] = 'App\Kernel';
@@ -33,6 +33,7 @@ $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'Symfony\Component\Validator\Validation';
 $classes[] = 'Symfony\Component\Validator\ContainerConstraintValidatorFactory';
 $classes[] = 'Symfony\Bridge\Doctrine\Validator\DoctrineInitializer';
+$classes[] = 'Symfony\Component\Validator\Mapping\Loader\PropertyInfoLoader';
 $classes[] = 'Symfony\Bridge\Doctrine\Validator\DoctrineLoader';
 $classes[] = 'Symfony\Component\HttpKernel\Profiler\Profiler';
 $classes[] = 'Symfony\Component\HttpKernel\Profiler\FileProfilerStorage';
@@ -57,6 +58,7 @@ $classes[] = 'Symfony\Component\Routing\RequestContext';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\RouterListener';
 $classes[] = 'Doctrine\Common\Annotations\AnnotationReader';
 $classes[] = 'Doctrine\Common\Annotations\AnnotationRegistry';
+$classes[] = 'Symfony\Component\PropertyInfo\PropertyInfoExtractor';
 $classes[] = 'Twig\Environment';
 $classes[] = 'Twig\Loader\FilesystemLoader';
 $classes[] = 'Symfony\Bridge\Twig\Extension\ProfilerExtension';
