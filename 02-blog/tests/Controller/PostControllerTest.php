@@ -66,4 +66,34 @@ class PostControllerTest extends WebTestCase{
         $this->assertEquals(Response::HTTP_BAD_REQUEST, $this->client->getResponse()->getStatusCode());
     }
 
+    public function test_update_post(): void {
+        $post = new Post("teste", "teste");
+        $this->em->persist($post);
+        $this->em->flush();
+        
+        $this->client->request('PUT','/posts/1', [], [], [], json_encode([
+            'title' => 'novo titulo',
+            'description' => 'nova descricao'
+            ]));    
+        $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
+    }
+    
+    // public function test_list_all_post(): void {
+    //     $post = new Post("teste", "teste");
+    //     $this->em->persist($post);
+    //     $this->em->flush();
+    
+    //     $this->client->request('GET', '/posts', [], [], [], null);
+    //     $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
+    // }
+    
+    // public function test_list_post(): void{
+    //     $post = new Post("teste", "teste");
+    //     $this->em->persist($post);
+    //     $this->em->flush();
+    
+    //     $this->client->request('GET', '/posts/1', [], [], [], null);
+    //     $this->assertEquals(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
+    // }
+
 }
