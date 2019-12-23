@@ -1,7 +1,8 @@
 index:
     path: /hello-{name}
     controller: App\Controller\DefaultController::index
-mailer:
+
+
+mail:
     path: /mail
     controller: App\Controller\DefaultController::mail
-    

@@ -173,6 +173,6 @@ class __TwigTemplate_2d407da3c608564defa7ec71279abbe8da14e1ca23cf47cc143d13ba5dd
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\Users\\lucas.barbosa\\Downloads\\blog-teste\\templates\\base.html.twig");
+", "base.html.twig", "C:\\Users\\lucas.barbosa\\Documents\\GitHub\\Aplications_PHP\\02-blog\\symfony-blog\\templates\\base.html.twig");
     }
 }

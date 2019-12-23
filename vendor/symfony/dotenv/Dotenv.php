@@ -35,7 +35,7 @@ final class Dotenv
     private $data;
     private $end;
     private $values;
-    private $usePutenv;
+    private $usePutenv = true;
 
     /**
      * @var bool If `putenv()` should be used to define environment variables or not.
@@ -458,7 +458,7 @@ final class Dotenv
             } elseif (isset($this->values[$name])) {
                 $value = $this->values[$name];
             } else {
-                $value = (string) getenv($name);
+                $value = '';
             }
 
             if ('' === $value && isset($matches['default_value']) && '' !== $matches['default_value']) {

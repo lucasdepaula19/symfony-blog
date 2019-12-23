@@ -17,9 +17,9 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'app_post_create' => [[], ['_controller' => 'App\\Controller\\PostController::create'], [], [['text', '/posts']], [], []],
     'app_post_details' => [['id'], ['_controller' => 'App\\Controller\\PostController::details'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/posts']], [], []],
-    'app_post_index' => [[], ['_controller' => 'App\\Controller\\PostController::index'], [], [['text', '/posts']], [], []],
+    'app_post_index' => [[], ['_controller' => 'App\\Controller\\PostController::index'], [], [['text', '/posts/']], [], []],
     'app_post_update' => [['id'], ['_controller' => 'App\\Controller\\PostController::update'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/posts']], [], []],
     'app_post_delete' => [['id'], ['_controller' => 'App\\Controller\\PostController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/posts']], [], []],
     'index' => [['name'], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['variable', '-', '[^/]++', 'name', true], ['text', '/hello']], [], []],
-    'mailer' => [[], ['_controller' => 'App\\Controller\\DefaultController::mail'], [], [['text', '/mail']], [], []],
+    'mail' => [[], ['_controller' => 'App\\Controller\\DefaultController::mail'], [], [['text', '/mail']], [], []],
 ];

@@ -73,7 +73,7 @@ abstract class FileLoader extends BaseFileLoader
                 }
             }
 
-            if (__FILE__ !== $frame['file']) {
+            if ($args !== $frame['args']) {
                 throw $e;
             }
         }

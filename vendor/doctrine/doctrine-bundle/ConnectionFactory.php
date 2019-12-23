@@ -11,7 +11,6 @@ use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Exception\DriverException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\Type;
-use function is_subclass_of;
 
 class ConnectionFactory
 {
@@ -43,20 +42,12 @@ class ConnectionFactory
             $this->initializeTypes();
         }
 
+        $connection = DriverManager::getConnection($params, $config, $eventManager);
+
         if (! isset($params['pdo']) && ! isset($params['charset'])) {
-            $wrapperClass = null;
-            if (isset($params['wrapperClass'])) {
-                if (! is_subclass_of($params['wrapperClass'], Connection::class)) {
-                    throw DBALException::invalidWrapperClass($params['wrapperClass']);
-                }
-
-                $wrapperClass           = $params['wrapperClass'];
-                $params['wrapperClass'] = null;
-            }
-
-            $connection = DriverManager::getConnection($params, $config, $eventManager);
-            $params     = $connection->getParams();
-            $driver     = $connection->getDriver();
+            $params            = $connection->getParams();
+            $params['charset'] = 'utf8';
+            $driver            = $connection->getDriver();
 
             if ($driver instanceof AbstractMySQLDriver) {
                 $params['charset'] = 'utf8mb4';
@@ -64,19 +55,9 @@ class ConnectionFactory
                 if (! isset($params['defaultTableOptions']['collate'])) {
                     $params['defaultTableOptions']['collate'] = 'utf8mb4_unicode_ci';
                 }
-            } else {
-                $params['charset'] = 'utf8';
             }
 
-            if ($wrapperClass !== null) {
-                $params['wrapperClass'] = $wrapperClass;
-            } else {
-                $wrapperClass = Connection::class;
-            }
-
-            $connection = new $wrapperClass($params, $driver, $config, $eventManager);
-        } else {
-            $connection = DriverManager::getConnection($params, $config, $eventManager);
+            $connection = new $connection($params, $driver, $connection->getConfiguration(), $connection->getEventManager());
         }
 
         if (! empty($mappingTypes)) {

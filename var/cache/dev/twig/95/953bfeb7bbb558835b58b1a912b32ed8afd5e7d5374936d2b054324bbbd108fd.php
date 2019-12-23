@@ -54,7 +54,7 @@ class __TwigTemplate_eb20cb43741216a7372ffa2b31565feca170f65c3777583d85ab7013069
 
     }
 
-    // line 2
+    // line 4
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -64,10 +64,10 @@ class __TwigTemplate_eb20cb43741216a7372ffa2b31565feca170f65c3777583d85ab7013069
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 3
+        // line 5
         echo "    <h1>Hello ";
-        echo twig_escape_filter($this->env, (isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 3, $this->source); })()), "html", null, true);
-        echo "</h1>
+        echo twig_escape_filter($this->env, (isset($context["name"]) || array_key_exists("name", $context) ? $context["name"] : (function () { throw new RuntimeError('Variable "name" does not exist.', 5, $this->source); })()), "html", null, true);
+        echo " !!!</h1>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -89,14 +89,17 @@ class __TwigTemplate_eb20cb43741216a7372ffa2b31565feca170f65c3777583d85ab7013069
 
     public function getDebugInfo()
     {
-        return array (  68 => 3,  58 => 2,  35 => 1,);
+        return array (  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
+
+
 {% block body %}
-    <h1>Hello {{name}}</h1>
-{% endblock %}", "index.html.twig", "C:\\Users\\lucas.barbosa\\Downloads\\blog-teste\\templates\\index.html.twig");
+    <h1>Hello {{name}} !!!</h1>
+{% endblock %}
+", "index.html.twig", "C:\\Users\\lucas.barbosa\\Documents\\GitHub\\Aplications_PHP\\02-blog\\symfony-blog\\templates\\index.html.twig");
     }
 }

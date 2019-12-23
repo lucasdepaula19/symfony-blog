@@ -89,7 +89,7 @@
         "phpunit-bridge": {
             "options": {"symlink": false},
             "type": "path",
-            "url": "C:\\Users\\lucas.barbosa\\Downloads\\blog-teste\\vendor\\symfony\\phpunit-bridge"
+            "url": "C:\\Users\\lucas.barbosa\\Documents\\GitHub\\Aplications_PHP\\02-blog\\symfony-blog\\vendor\\symfony\\phpunit-bridge"
         }
     }
 }
