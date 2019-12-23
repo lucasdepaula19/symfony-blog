@@ -100,6 +100,6 @@ class __TwigTemplate_eb20cb43741216a7372ffa2b31565feca170f65c3777583d85ab7013069
 {% block body %}
     <h1>Hello {{name}} !!!</h1>
 {% endblock %}
-", "index.html.twig", "C:\\Users\\lucas.barbosa\\Documents\\GitHub\\Aplications_PHP\\02-blog\\symfony-blog\\templates\\index.html.twig");
+", "index.html.twig", "C:\\Users\\lucas.barbosa\\Documents\\GitHub\\symfony-blog\\templates\\index.html.twig");
     }
 }

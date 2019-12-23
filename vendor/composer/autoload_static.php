@@ -86,6 +86,7 @@ class ComposerStaticInit79e8472de2cde4cbfd7b3af2913c8189
         ),
         'D' => 
         array (
+            'Doctrine\\Persistence\\' => 21,
             'Doctrine\\ORM\\' => 13,
             'Doctrine\\Migrations\\' => 20,
             'Doctrine\\Instantiator\\' => 22,
@@ -312,6 +313,10 @@ class ComposerStaticInit79e8472de2cde4cbfd7b3af2913c8189
         'PackageVersions\\' => 
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+        ),
+        'Doctrine\\Persistence\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Persistence',
         ),
         'Doctrine\\ORM\\' => 
         array (
